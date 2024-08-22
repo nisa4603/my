@@ -1,0 +1,93 @@
+int led1=2;  
+int led2=3;
+int led3=4;
+int led4=5;
+int led5=6;
+int led6=7;
+int potdeger; 
+int potdeger1;
+int sensordegeri;  
+int potpin=A1;  
+  
+void setup() {
+Serial.begin(9600);    
+pinMode(2,OUTPUT);  
+pinMode(3,OUTPUT);
+pinMode(4,OUTPUT);
+pinMode(5,OUTPUT);
+pinMode(6,OUTPUT);
+pinMode(7,OUTPUT);
+pinMode(potpin,INPUT);
+
+}
+
+void loop() {
+potdeger=analogRead(potpin);
+potdeger = map(potdeger,0,1023,0,255);
+Serial.println(potdeger);
+delay(20);
+sensordegeri =analogRead(A0);
+Serial.println(sensordegeri);
+if (sensordegeri < 950){  
+potdeger1=analogRead(potpin);
+potdeger1 = map(potdeger1,0,1023,80,20);
+digitalWrite(2,HIGH);  
+digitalWrite(3,LOW);
+digitalWrite(4,LOW);
+digitalWrite(5,LOW);
+digitalWrite(6,LOW);
+digitalWrite(7,LOW);
+delay(potdeger1);      
+
+digitalWrite(2,LOW);
+digitalWrite(3,HIGH);
+digitalWrite(4,LOW);
+digitalWrite(5,LOW);
+digitalWrite(6,LOW);
+digitalWrite(7,LOW);
+delay(potdeger1);
+
+digitalWrite(2,LOW);
+digitalWrite(3,LOW);
+digitalWrite(4,HIGH);
+digitalWrite(5,LOW);
+digitalWrite(6,LOW);
+digitalWrite(7,LOW);
+delay(potdeger1);
+
+digitalWrite(2,LOW);
+digitalWrite(3,LOW);
+digitalWrite(4,LOW);
+digitalWrite(5,HIGH);
+digitalWrite(6,LOW);
+digitalWrite(7,LOW);
+delay(potdeger1);
+
+digitalWrite(2,LOW);
+digitalWrite(3,LOW);
+digitalWrite(4,LOW);
+digitalWrite(5,LOW);
+digitalWrite(6,HIGH);
+digitalWrite(7,LOW);
+delay(potdeger1);
+
+digitalWrite(2,LOW);
+digitalWrite(3,LOW);
+digitalWrite(4,LOW);
+digitalWrite(5,LOW);
+digitalWrite(6,LOW);
+digitalWrite(7,HIGH);
+delay(potdeger1); 
+
+}
+
+else {   
+digitalWrite(2,LOW);  
+digitalWrite(3,LOW);
+digitalWrite(4,LOW);
+digitalWrite(5,LOW);
+digitalWrite(6,LOW);
+digitalWrite(7,LOW);
+delay(potdeger1);    
+}
+}
