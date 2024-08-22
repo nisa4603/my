@@ -1,2 +1,2 @@
 # my
-kızılötesi optik sensör ve potansiyometre ile led kontrolü
+led control with infrared optical sensor and potentiometer
